@@ -10,7 +10,6 @@ const bookFields = [
   'author',
   'publisher',
   'date',
-  'country',
   'pages',
 ]
 
@@ -38,6 +37,9 @@ function confirmDialog() {
 
   renderTableRow(JSON.parse(book))
   bookDialogEl.hide()
+  document.getElementById('table').removeAttribute('hidden')
+  localStorage.setItem('book', null)
+  isbnInputEl.value = ''
 }
 function renderTableRow(book) {
 
@@ -47,7 +49,10 @@ function renderTableRow(book) {
   const newBook = rowTemplate.content.cloneNode(true)
 
   const renderTd = (field) => {
-    newBook.querySelector(`#book-${field}`)?.textContent = book[field]
+    const element = newBook.querySelector(`#book-${field}`)
+    if (element) {
+      element.textContent = book[field]
+    }
   }
 
   bookFields.forEach(field => {
@@ -91,7 +96,10 @@ function closeDialog() {
 function openDialog(book) {
 
   const renderField = (field) => {
-    bookDialogEl.querySelector(`#dialog-${field}`)?.textContent = book[field]
+    const element = bookDialogEl.querySelector(`#dialog-${field}`)
+    if (element) {
+      element.textContent = book[field]
+    }
   }
 
   bookFields.forEach(field => {
