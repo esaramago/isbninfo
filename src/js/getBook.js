@@ -1,4 +1,5 @@
 import xml2js from 'xml2js'
+import asyncForEach from './helpers/asyncForEach'
 
 // Classes
 class Book {
@@ -48,12 +49,18 @@ async function fetchOpenLibrary(isbn) {
   const data = response.ok && await response.json()
 
   if (data && !data.error) {
-    const { author } = await fetchOpenLibraryAuthor(data.authors[0].key)
+
+    const authors = []
+    await asyncForEach(data.authors, async (author) => {
+      const authorName = await fetchOpenLibraryAuthor(author.key)
+      authors.push(authorName)
+    })
+
     book = new Book({
       isbn,
-      title: data.full_title,
-      author: author.name,
-      publisher: data.publishers[0],
+      title: data.title,
+      author: authors.join(', '),
+      publisher: data.publishers.join(', '),
       date: data.publish_date,
       country: data.publish_country,
       pages: data.number_of_pages,
@@ -70,10 +77,7 @@ async function fetchOpenLibraryAuthor(key) {
   const response = await fetch(`https://openlibrary.org${key}.json`)
   const data = response.ok && await response.json()
 
-  return {
-    author: data,
-    authorError: !data || data.error,
-  }
+  return data.name
 }
 
 async function fetchBnp(isbn) {
