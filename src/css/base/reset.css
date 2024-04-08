@@ -1,0 +1,51 @@
+html {
+  height: 100%;
+}
+
+img {
+  display: block;
+}
+img,
+svg,
+video {
+  max-width: 100%;
+  height: auto;
+}
+svg {
+  vertical-align: middle;
+}
+body,
+ul,
+p,
+h1,
+h2,
+h3,
+blockquote,
+button {
+  margin: 0;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: inherit;
+}
+
+blockquote {
+  font-style: italic;
+}
+
+input,
+button {
+  font-size: inherit;
+}
+button {
+  background: none;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}

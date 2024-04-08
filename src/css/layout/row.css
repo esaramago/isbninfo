@@ -1,0 +1,16 @@
+.l-row {
+  display: flex;
+  gap: var(--spacing-small);
+}
+@media (min-width: 600px) {
+  .l-row {
+    flex-direction: row;
+    align-items: end;
+  }
+}
+@media (max-width: 599px) {
+  .l-row {
+    flex-direction: column;
+  }
+}
+

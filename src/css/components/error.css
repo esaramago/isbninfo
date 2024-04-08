@@ -1,0 +1,8 @@
+.c-error {
+  color: var(--sl-color-danger-500);
+  display: none;
+}
+.c-error.is-active {
+  display: block;
+}
+

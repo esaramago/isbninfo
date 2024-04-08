@@ -1,0 +1,9 @@
+body {
+  height: 100%;
+  margin: 0;
+  font-family: var(--sl-font-sans);
+  font-size: var(--sl-font-size-large);
+  line-height: 1.4;
+  color: var(--sl-color-neutral-900);
+  fill: var(--sl-color-neutral-900);
+}

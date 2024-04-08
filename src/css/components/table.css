@@ -1,0 +1,13 @@
+.c-table {
+  font-size: 1rem;
+}
+.c-table th {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.c-table th,
+.c-table td {
+  padding: .8rem .5rem;
+  border-bottom: 1px solid var(--sl-color-neutral-300);
+}

@@ -1,0 +1,10 @@
+.env
+dist
+.DS_Store
+node_modules
+.vscode
+explorations
+TODOs.md
+RELEASE_NOTE*.md
+temp
+.parcel-cache

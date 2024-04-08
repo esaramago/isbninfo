@@ -1,0 +1,7 @@
+.l-container {
+  width: 100%;
+  max-width: 100rem;
+  margin-inline: auto;
+  padding-inline: var(--spacing-medium);
+  box-sizing: border-box;
+}

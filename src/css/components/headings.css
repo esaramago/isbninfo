@@ -1,0 +1,18 @@
+.c-h1 {
+  font-size: var(--sl-font-size-3x-large);
+}
+.c-h2 {
+  font-size: var(--sl-font-size-2x-large);
+}
+.c-h3 {
+  font-size: var(--sl-font-size-x-large);
+}
+.c-h4 {
+  font-size: var(--sl-font-size-large);
+}
+.c-h5 {
+
+}
+.c-h6 {
+  font-size: var(--sl-font-size-small);
+}
